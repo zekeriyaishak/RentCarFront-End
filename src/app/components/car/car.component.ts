@@ -1,4 +1,6 @@
+import { CarService } from './../../services/car.service';
 import { Component, OnInit } from '@angular/core';
+import { Car } from 'src/app/models/car';
 
 @Component({
   selector: 'app-car',
@@ -7,17 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
-  car1:any={carId:1, carName:'Hyundai', brandId:1, colorId:5}
-  car2:any={carId:2, carName:'Volswagen', brandId:1, colorId:5}
-  car3:any={carId:3, carName:'Honda', brandId:1, colorId:5}
-  car4:any={carId:4, carName:'Renault', brandId:1, colorId:5}
-  car5:any={carId:5, carName:'TOGG', brandId:1, colorId:5}
+  cars: Car[] = [];
+  dataLoaded = false;
 
-  cars = [this.car1, this.car2, this.car3, this.car4,this.car5]
-
-  constructor() { }
+  constructor(private carService:CarService) { }
 
   ngOnInit(): void {
+    this.getCars();
+  }
+
+  getCars(){
+    //neden subscribe lazım? - backend apisi ile çalışıyorsan 
+    //23.satırdaki asenkron çalışıyor.
+    this.carService.getCars().subscribe(response=>{
+      this.cars=response.data;
+      this.dataLoaded=true;
+    });
   }
 
 }
