@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarComponent } from './components/car/car.component';
 import { NaviComponent } from './components/navi/navi.component';
+import { BrandComponent } from './components/brand/brand.component';
 
 //birbiri ile ilişkili componentleri topladığımız yer.
 
@@ -14,7 +15,8 @@ import { NaviComponent } from './components/navi/navi.component';
   declarations: [
     AppComponent,
     CarComponent,
-    NaviComponent
+    NaviComponent,
+    BrandComponent
   ],
   imports: [
     BrowserModule,
