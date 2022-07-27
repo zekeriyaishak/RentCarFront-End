@@ -4,7 +4,6 @@
 <table *ngIf="dataLoaded==true" class ="table">
     <thead>
         <tr>
-            <th>id</th>
             <th>Marka Id</th>
             <th>Color Id</th>
             <th>Model Yılı</th>
@@ -13,7 +12,6 @@
         </tr>
     </thead>
     <tr *ngFor = "let car of cars">
-        <td>{{car.id}}</td>
         <td>{{car.brandId}}</td>
         <td>{{car.colorId}}</td>
         <td>{{car.modelYear}}</td>

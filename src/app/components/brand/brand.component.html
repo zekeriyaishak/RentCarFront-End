@@ -2,10 +2,11 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 
-  <table>
+  <table *ngIf="dataLoaded==true" class ="table">
     <thead>
         <tr>
             <th>Marka Id</th>
+            <th>Marka ismi</th>
         </tr>
     </thead>
     <tr *ngFor = "let brand of brands">
