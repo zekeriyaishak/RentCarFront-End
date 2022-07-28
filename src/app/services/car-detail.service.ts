@@ -1,3 +1,4 @@
+import { Car } from 'src/app/models/car';
 import { CarDetail } from './../models/carDetail';
 import { BaseUrl } from './../models/constants/urls';
 import { Observable } from 'rxjs';
@@ -16,4 +17,5 @@ export class CarDetailService {
     return this.httpClient.get<ListResponseModel<CarDetail>>(BaseUrl +"Cars/getcardetails")
   }
 
+  
 }

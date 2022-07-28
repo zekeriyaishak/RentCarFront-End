@@ -14,6 +14,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { UserComponent } from './components/user/user.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { RentalDetailComponent } from './components/rental-detail/rental-detail.component';
 
 //birbiri ile ilişkili componentleri topladığımız yer.
 
@@ -28,7 +29,8 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
     CustomerComponent,
     RentalComponent,
     UserComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    RentalDetailComponent
   ],
   imports: [
     BrowserModule,

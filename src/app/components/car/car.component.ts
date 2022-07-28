@@ -26,6 +26,9 @@ export class CarComponent implements OnInit {
       }else if(params["colorId"]){
         this.getCarsByColor(params["colorId"])
       }
+      // else if(params["colorId"] && params["brandId"]){
+      //   this.getCarDetailByColorAndByBrand(params["colorId"],params["brandId"])
+      // }
       else{
         this.getCars();
       }
@@ -55,6 +58,12 @@ export class CarComponent implements OnInit {
     })
   }
 
+  getCarsById(id:number){
+    this.carService.getCarsById(id).subscribe(response=>{
+      this.cars = response.data;
+      this.dataLoaded = true;
+    })
+  }
   getCurrentCarClass(car:Car){
     if(car == this.currentCar){
       return "list-group-item active"
@@ -72,9 +81,6 @@ export class CarComponent implements OnInit {
       return "list-group-item"
     }
   }
-
-
-
   setCurrentCar(car:Car){
     this.currentCar = car;
   }

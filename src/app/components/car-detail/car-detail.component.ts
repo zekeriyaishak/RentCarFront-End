@@ -22,8 +22,6 @@ export class CarDetailComponent implements OnInit {
     this.carDetailService.getCarDetails().subscribe(response=>{
       this.carDetails = response.data;
       this.dataLoaded = true;
-
     })
   }
-
 }

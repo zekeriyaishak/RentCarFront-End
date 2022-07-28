@@ -15,5 +15,6 @@ export class RentalService {
   getRentals():Observable<ListResponseModel<Rental>>{
     return this.httpClient.get<ListResponseModel<Rental>>(BaseUrl + "Rentals/getall")
   }
+  
 
 }
