@@ -1,4 +1,14 @@
+<div class="bg-secondary text-white btn w-100 mt-1 mb-1">Colors</div>
+
 <ul class="list-group">
+    <li 
+    routerLink="/cars"
+    [class]="getallColorClass()"
+    (click) = "clearCurrentColor()"
+  >
+  Tüm renkli arabalar
+  </li>
+
     <li (click) = "setCurrentColor(color)"
     routerLink = "cars/color/{{color.id}}"
     *ngFor = "let color of colors"

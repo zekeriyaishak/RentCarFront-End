@@ -11,6 +11,8 @@ export class BrandComponent implements OnInit {
   brands: Brand[] = []
   dataLoaded = false;
   currentBrand: Brand;
+  emptyBrand:Brand;
+
   constructor(private brandService:BrandService) { }
 
   ngOnInit(): void {
@@ -44,6 +46,9 @@ export class BrandComponent implements OnInit {
     else{
       return "list-group-item"
     }
+  }
+  clearCurrentBrand(){
+    this.currentBrand = this.emptyBrand;
   }
  
 

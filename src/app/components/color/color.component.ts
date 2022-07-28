@@ -11,6 +11,8 @@ export class ColorComponent implements OnInit {
   colors: Color[] = []
   dataLoaded = false
   currentColor:Color;
+  emptyColor:Color;
+
 
   constructor(private colorService:ColorService) { }
 
@@ -45,6 +47,9 @@ export class ColorComponent implements OnInit {
     else{
       return "list-group-item"
     }
+  }
+  clearCurrentColor(){
+    this.currentColor = this.emptyColor;
   }
 
 
