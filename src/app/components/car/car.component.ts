@@ -1,3 +1,4 @@
+import { CarDetail } from 'src/app/models/carDetail';
 import { CarService } from './../../services/car.service';
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
@@ -11,8 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 export class CarComponent implements OnInit {
 
   cars: Car[] = [];
+  carDetails:CarDetail[] = []
   dataLoaded = false;
   currentCar: Car;
+  carPath: string = '';
 
   constructor(private carService:CarService, private activedRoute:ActivatedRoute) { }
 
@@ -69,6 +72,8 @@ export class CarComponent implements OnInit {
       return "list-group-item"
     }
   }
+
+
 
   setCurrentCar(car:Car){
     this.currentCar = car;

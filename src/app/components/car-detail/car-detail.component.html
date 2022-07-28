@@ -10,6 +10,8 @@
             <th>Marka İsmi</th>
             <th>Rengi</th>
             <th>Günlük Fiyatı</th>
+            <th>Model Yılı </th>
+
         </tr>
     </thead>
     <tr *ngFor = "let carDetail of carDetails">
@@ -18,5 +20,6 @@
         <td>{{carDetail.brandName}}</td>
         <td>{{carDetail.colorName}}</td>
         <td>{{carDetail.dailyPrice}}</td>
+        <td>{{carDetail.modelYear}}</td>
     </tr>
   </table>
