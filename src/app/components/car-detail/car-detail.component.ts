@@ -1,6 +1,7 @@
 import { CarDetailService } from './../../services/car-detail.service';
 import { Component, OnInit } from '@angular/core';
 import { CarDetail } from 'src/app/models/carDetail';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,8 +12,12 @@ import { CarDetail } from 'src/app/models/carDetail';
 export class CarDetailComponent implements OnInit {
   carDetails: CarDetail[] = []
   dataLoaded = false;
+  filterText ="";
+  filterText1 ="";
 
-  constructor(private carDetailService:CarDetailService) { }
+
+  constructor(private carDetailService:CarDetailService,
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getCarDetails()
@@ -22,6 +27,7 @@ export class CarDetailComponent implements OnInit {
     this.carDetailService.getCarDetails().subscribe(response=>{
       this.carDetails = response.data;
       this.dataLoaded = true;
+      this.toastrService.success("Data geldi")
     })
   }
 }

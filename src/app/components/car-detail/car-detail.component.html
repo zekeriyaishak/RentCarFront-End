@@ -2,6 +2,24 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 
+  <div class="mb-3">
+    <label for="filterText" class="form-label">Marka ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="marka giriniz">
+</div>
+<div class="alert alert-success">
+    {{filterText}} aradınız
+</div>
+
+<!--| filterColor:filterText
+   <div class="mb-3">
+  <label for="filterText" class="form-label">Renk ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Renk giriniz">
+</div>
+<div class="alert alert-success">
+  {{filterText}} aradınız
+</div> -->
+
+
   <table *ngIf="dataLoaded==true" class ="table">
     <thead>
         <tr>
@@ -14,7 +32,7 @@
 
         </tr>
     </thead>
-    <tr *ngFor = "let carDetail of carDetails">
+    <tr *ngFor = "let carDetail of carDetails | filterPipe:filterText ">
         <td>{{carDetail.carId}}</td>
         <td>{{carDetail.carName}}</td>
         <td>{{carDetail.brandName}}</td>
@@ -23,3 +41,6 @@
         <td>{{carDetail.modelYear}}</td>
     </tr>
   </table>
+ 
+
+  
