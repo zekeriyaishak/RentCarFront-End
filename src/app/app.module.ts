@@ -24,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { FilterColorPipe } from './pipes/filter-color.pipe';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
 
 //birbiri ile ilişkili componentleri topladığımız yer.
 
@@ -44,7 +45,8 @@ import { CarAddComponent } from './components/car-add/car-add.component';
     FilterPipePipe,
     FilterColorPipe,
     CartSummaryComponent,
-    CarAddComponent
+    CarAddComponent,
+    BrandAddComponent
   ],
   imports: [
     BrowserModule,

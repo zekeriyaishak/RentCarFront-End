@@ -1,3 +1,4 @@
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { CarComponent } from './components/car/car.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   {path:"cars",component:CarComponent},
   {path:"cars/brand/:brandId",component:CarComponent},
   {path:"cars/color/:colorId",component:CarComponent},
-  {path:"Cars/add",component:CarAddComponent}
+  {path:"Cars/add",component:CarAddComponent},
+  {path:"Brands/add",component:BrandAddComponent}
 ];
 
 @NgModule({
