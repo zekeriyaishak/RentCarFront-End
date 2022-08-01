@@ -1,3 +1,5 @@
+import { ToastrService } from 'ngx-toastr';
+import { CartService } from 'src/app/services/cart.service';
 import { CarDetail } from 'src/app/models/carDetail';
 import { CarService } from './../../services/car.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +19,9 @@ export class CarComponent implements OnInit {
   currentCar: Car;
   carPath: string = '';
   filterText:"";
-  constructor(private carService:CarService, private activedRoute:ActivatedRoute) { }
+  
+  constructor(private carService:CarService, private activedRoute:ActivatedRoute,
+    private cartService:CartService, private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe(params=>{
@@ -64,6 +68,18 @@ export class CarComponent implements OnInit {
       this.dataLoaded = true;
     })
   }
+
+  getCarsWithDetailsWithFilters(brandId?: number, colorId?: number) {
+    this.carService.getCarDetailByColorAndByBrand(brandId, colorId).subscribe(response => {
+      this.carDetails = response.data;
+    });
+  }
+  addToCart(car:Car){
+    this.toastrService.success("Sepete eklendi",car.description)
+    this.cartService.addToCart(car);
+  }
+
+
   getCurrentCarClass(car:Car){
     if(car == this.currentCar){
       return "list-group-item active"

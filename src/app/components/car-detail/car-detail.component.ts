@@ -30,4 +30,5 @@ export class CarDetailComponent implements OnInit {
       this.toastrService.success("Data geldi")
     })
   }
+  
 }

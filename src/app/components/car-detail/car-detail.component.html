@@ -3,12 +3,10 @@
   </div>
 
   <div class="mb-3">
-    <label for="filterText" class="form-label">Marka ara</label>
+    <label for="filterText" class="form-label"><button type="button" class="btn btn-info">Filtrele</button></label>
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="marka giriniz">
 </div>
-<div class="alert alert-success">
-    {{filterText}} aradınız
-</div>
+
 
 <!--| filterColor:filterText
    <div class="mb-3">
@@ -29,10 +27,10 @@
             <th>Rengi</th>
             <th>Günlük Fiyatı</th>
             <th>Model Yılı </th>
-
         </tr>
     </thead>
-    <tr *ngFor = "let carDetail of carDetails | filterPipe:filterText ">
+    <tbody>
+      <tr *ngFor = "let carDetail of carDetails | filterPipe:filterText ">
         <td>{{carDetail.carId}}</td>
         <td>{{carDetail.carName}}</td>
         <td>{{carDetail.brandName}}</td>
@@ -40,6 +38,7 @@
         <td>{{carDetail.dailyPrice}}</td>
         <td>{{carDetail.modelYear}}</td>
     </tr>
+    </tbody>
   </table>
  
 

@@ -22,6 +22,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import { ToastrModule } from 'ngx-toastr';
 import { FilterColorPipe } from './pipes/filter-color.pipe';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 //birbiri ile ilişkili componentleri topladığımız yer.
 
@@ -40,7 +41,8 @@ import { FilterColorPipe } from './pipes/filter-color.pipe';
     RentalDetailComponent,
     FilterBrandPipe,
     FilterPipePipe,
-    FilterColorPipe
+    FilterColorPipe,
+    CartSummaryComponent
   ],
   imports: [
     BrowserModule,

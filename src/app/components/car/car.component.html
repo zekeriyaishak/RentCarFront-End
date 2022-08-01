@@ -18,13 +18,18 @@
             <th>Model Yılı</th>
             <th>Günlük Fiyatı</th>
             <th>Araç Ismi</th>
+            <th></th>
         </tr>
     </thead>
-    <tr *ngFor = "let car of cars| filterBrand:filterText">
-        <td>{{car.brandId}}</td>
-        <td>{{car.colorId}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.description}}</td>
-    </tr>
+    <tbody>
+        <tr *ngFor = "let car of cars| filterBrand:filterText">
+            <td>{{car.brandId}}</td>
+            <td>{{car.colorId}}</td>
+            <td>{{car.modelYear}}</td>
+            <td>{{car.dailyPrice}}</td>
+            <td>{{car.description}}</td>
+            <td><button (click)="addToCart(car)"  type="button" class="btn btn-success">Kirala</button>
+            </td>
+        </tr>
+    </tbody>
 </table>
