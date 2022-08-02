@@ -10,7 +10,6 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./car-uptade.component.css']
 })
 
-//HATA YOK FAKAT GELMİYOR EKRAN- HATA MESAJIDA GELMİYOR BAKILACAK SONRA
 export class CarUptadeComponent implements OnInit {
   @Input() id: number;
   updateCarFormGroup: FormGroup;
@@ -29,16 +28,16 @@ export class CarUptadeComponent implements OnInit {
   "colorId": 0,
   "modelYear": 0,
   "dailyPrice": 0,
-  "description": "string"
-}*/
+  "description": "string"*/
+
   updateCarFormGroupBuild() {
       this.updateCarFormGroup = this.formBuilder.group({
       id: [this.id],
-      brandId: ['', Validators.required],
-      colorId: ['', Validators.required],
-      modelYear: ['', Validators.required],
-      dailyPrice: ['', [Validators.required]],
-      description: ['', Validators.required],
+      brandId: ["", Validators.required],
+      colorId: ["", Validators.required],
+      modelYear: ["", Validators.required],
+      dailyPrice: ["", [Validators.required]],
+      description: ["", Validators.required],
       })
   }
 
@@ -57,21 +56,18 @@ export class CarUptadeComponent implements OnInit {
           if (errorResponse.error.ValidationErrors.length > 0) {
             for (
               let i = 0;
-              i < errorResponse.error.ValidationErrors.length;
+              i < errorResponse.error.Errors.length;
               i++
             ) {
-              console.log(errorResponse.error.ValidationErrors[i].ErrorMessage);
               this.toastrService.error(
-                errorResponse.error.ValidationErrors[i].ErrorMessage
+                errorResponse.error.ValidationErrors[i].ErrorMessage,"Doğrulama Hatası"
               );
             }
-          } else {
-            this.toastrService.error('Please fill all Car Detail Inputs');
           }
         }
       );
     } else {
-      this.toastrService.error('Please fill all Car Detail Inputs');
+      this.toastrService.error("Formunuz Eksik");
     }
   }
 

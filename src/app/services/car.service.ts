@@ -1,3 +1,4 @@
+import { SingleResponseModel } from './../models/singleResponseModel';
 import { ResponseModel } from './../models/responseMode';
 import { CarDetail } from 'src/app/models/carDetail';
 import { Car } from './../models/car';
@@ -42,8 +43,8 @@ export class CarService {
   add(car:Car):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(BaseUrl+"Cars/add",car)
   }
-  updateCar(car: Car): Observable<ResponseModel> {
-    return this.httpClient.put<ResponseModel>(BaseUrl + "Cars/update", car);
+  updateCar(car: Car): Observable<SingleResponseModel<Car>> {
+    return this.httpClient.put<SingleResponseModel<Car>>(BaseUrl + "Cars/update", car);
   }
 
 }
