@@ -22,14 +22,6 @@ export class CarUptadeComponent implements OnInit {
     this.id;
     this.updateCarFormGroupBuild();
   }
-  /*
-  "id": 0,
-  "brandId": 0,
-  "colorId": 0,
-  "modelYear": 0,
-  "dailyPrice": 0,
-  "description": "string"*/
-
   updateCarFormGroupBuild() {
       this.updateCarFormGroup = this.formBuilder.group({
       id: [this.id],
