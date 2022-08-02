@@ -1,3 +1,5 @@
+import { LoginGuard } from './guards/login.guard';
+import { LoginComponent } from './components/login/login.component';
 import { CarUptadeComponent } from './components/updateComponents/car-uptade/car-uptade.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
@@ -11,9 +13,10 @@ const routes: Routes = [
   {path:"cars",component:CarComponent},
   {path:"cars/brand/:brandId",component:CarComponent},
   {path:"cars/color/:colorId",component:CarComponent},
-  {path:"Cars/add",component:CarAddComponent},
+  {path:"Cars/add",component:CarAddComponent, canActivate:[LoginGuard]},
   {path:"Brands/add",component:BrandAddComponent},
   {path:"Colors/add",component:ColorAddComponent},
+  {path:"login",component:LoginComponent},
   {path:"Cars/uptade",component:CarUptadeComponent}
 ];
 
