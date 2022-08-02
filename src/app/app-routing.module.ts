@@ -1,3 +1,4 @@
+import { CarUptadeComponent } from './components/updateComponents/car-uptade/car-uptade.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:"cars/color/:colorId",component:CarComponent},
   {path:"Cars/add",component:CarAddComponent},
   {path:"Brands/add",component:BrandAddComponent},
-  {path:"Colors/add",component:ColorAddComponent}
+  {path:"Colors/add",component:ColorAddComponent},
+  {path:"Cars/uptade",component:CarUptadeComponent}
 ];
 
 @NgModule({
