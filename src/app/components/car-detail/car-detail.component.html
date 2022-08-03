@@ -14,13 +14,13 @@
   </thead>
   <tbody>
 
-    <tr *ngFor="let carDetail of carDetails ">
-      <td>{{carDetail.carId}}</td>
-      <td>{{carDetail.carName}}</td>
-      <td>{{carDetail.brandName}}</td>
-      <td>{{carDetail.colorName}}</td>
-      <td>{{carDetail.dailyPrice}}</td>
-      <td>{{carDetail.modelYear}}</td>
+    <tr *ngFor="let car of cars ">
+      <td>{{car.carId}}</td>
+      <td>{{car.carName}}</td>
+      <td>{{car.brandName}}</td>
+      <td>{{car.colorName}}</td>
+      <td>{{car.dailyPrice}}</td>
+      <td>{{car.modelYear}}</td>
       <td>
 
         <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-toggle="modal"
