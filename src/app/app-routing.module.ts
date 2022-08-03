@@ -8,6 +8,7 @@ import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarComponent } from './components/car/car.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {path:"", component:CarComponent}, //herhangi bir şey verilmezse
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:"Brands/add",component:BrandAddComponent},
   {path:"Colors/add",component:ColorAddComponent},
   {path:"login",component:LoginComponent},
+  { path: "register", component: RegisterComponent},
   { path: "cars/carDetails/:carId", component: CarDetailComponent },
   {path:"Cars/uptade",component:CarUptadeComponent}
 ];

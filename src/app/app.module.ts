@@ -29,6 +29,13 @@ import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
 import { CarUptadeComponent } from './components/updateComponents/car-uptade/car-uptade.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import {  JwtModule } from "@auth0/angular-jwt";
+
+export function tokenGetter() {
+  return localStorage.getItem("access_token");
+}
+
 
 //birbiri ile ilişkili componentleri topladığımız yer.
 
@@ -53,7 +60,8 @@ import { LoginComponent } from './components/login/login.component';
     BrandAddComponent,
     ColorAddComponent,
     CarUptadeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +72,14 @@ import { LoginComponent } from './components/login/login.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
-    })
+    }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["http://localhost:4200/"]
+      },
+    }),
+
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
