@@ -1,34 +1,33 @@
+<app-car-images></app-car-images>
 
 <table class="table table-dark table-borderless table-striped">
   <thead>
     <tr>
-      <th>Araba Adı</th>
-      <th>Markası</th>
+      <th>Araba id</th>
+      <th>Araba ismi</th>
+      <th>Marka</th>
       <th>Rengi</th>
-      <th>Günlük Ücret</th>
+      <th>Günlük Fiyatı</th>
+      <th>Model Yılı</th>
       <th>Kirala</th>
     </tr>
-    <!-- id:Number;
-    brandId:Number;
-    colorId:Number;
-    modelYear:Number;
-    dailyPrice:Number;
-    description:string; -->
   </thead>
   <tbody>
 
-    <tr *ngFor = "let carDetail of carDetails ">
+    <tr *ngFor="let carDetail of carDetails ">
       <td>{{carDetail.carId}}</td>
       <td>{{carDetail.carName}}</td>
       <td>{{carDetail.brandName}}</td>
       <td>{{carDetail.colorName}}</td>
       <td>{{carDetail.dailyPrice}}</td>
       <td>{{carDetail.modelYear}}</td>
+      <td>
+
         <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-toggle="modal"
           data-bs-target="#staticBackdrop" class="btn btn-light">
           Aracı Kirala
         </button>
-      
+      </td>
     </tr>
   </tbody>
 </table>
@@ -43,7 +42,7 @@
     <div class="modal-content">
 
       <div class="modal-body">
-        <!-- <app-rental-add></app-rental-add> -->
+        <app-rental-add></app-rental-add>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Çıkış</button>
@@ -52,3 +51,5 @@
     </div>
   </div>
 </div>
+
+

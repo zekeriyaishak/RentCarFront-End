@@ -16,19 +16,19 @@ export class CarService {
 
   //Angularda tanımlı httpclient ile apiye bağlanıyoruz
   //httpclient ile istek yap. gele datayı  abone et. gelen response için 
-  getCars():Observable<ListResponseModel<Car>>{
-      return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getall");
+  getCars():Observable<ListResponseModel<CarDetail>>{
+      return this.httpClient.get<ListResponseModel<CarDetail>>(BaseUrl + "cars/getcardetails");
   }
 
-  getCarsByBrand(brandId:number):Observable<ListResponseModel<Car>>{
-    return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getbybrand?brandId=" + brandId);
+  getCarsByBrand(brandId:number):Observable<ListResponseModel<CarDetail>>{
+    return this.httpClient.get<ListResponseModel<CarDetail>>(BaseUrl + "cars/getbybrand?brandId=" + brandId);
 }
-  getCarsByColor(colorId:number):Observable<ListResponseModel<Car>>{
-  return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getbycolor?colorId=" + colorId);
+  getCarsByColor(colorId:number):Observable<ListResponseModel<CarDetail>>{
+  return this.httpClient.get<ListResponseModel<CarDetail>>(BaseUrl + "cars/getbycolor?colorId=" + colorId);
 }
 
-  getCarsById(id:number):Observable<ListResponseModel<Car>>{
-  return this.httpClient.get<ListResponseModel<Car>>(BaseUrl + "cars/getbyid?id=" + id);
+  getCarsById(id:number):Observable<SingleResponseModel<CarDetail>>{
+  return this.httpClient.get<SingleResponseModel<CarDetail>>(BaseUrl + "cars/getbyid?id=" + id);
 }
 
   getCarDetail():Observable<ListResponseModel<CarDetail>>{

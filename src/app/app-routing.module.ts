@@ -9,6 +9,8 @@ import { CarComponent } from './components/car/car.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './components/register/register.component';
+import { RentalAddComponent } from './components/rental-add/rental-add.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 const routes: Routes = [
   {path:"", component:CarComponent}, //herhangi bir şey verilmezse
@@ -20,7 +22,9 @@ const routes: Routes = [
   {path:"Colors/add",component:ColorAddComponent},
   {path:"login",component:LoginComponent},
   { path: "register", component: RegisterComponent},
-  { path: "cars/carDetails/:carId", component: CarDetailComponent },
+  { path: "Cars/carDetails/:carId", component: CarDetailComponent },
+  { path: "cars/rentalAdd", component: RentalAddComponent },
+  { path: "cars/payment/:carId", component: PaymentComponent },
   {path:"Cars/uptade",component:CarUptadeComponent}
 ];
 

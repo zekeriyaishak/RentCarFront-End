@@ -31,6 +31,8 @@ import { CarUptadeComponent } from './components/updateComponents/car-uptade/car
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {  JwtModule } from "@auth0/angular-jwt";
+import { RentalAddComponent } from './components/rental-add/rental-add.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -61,7 +63,9 @@ export function tokenGetter() {
     ColorAddComponent,
     CarUptadeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RentalAddComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Rental } from '../models/rental';
 import { ListResponseModel } from '../models/listResponseModel';
+import { ResponseModel } from '../models/responseMode';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,9 @@ export class RentalService {
   getRentals():Observable<ListResponseModel<Rental>>{
     return this.httpClient.get<ListResponseModel<Rental>>(BaseUrl + "Rentals/getall")
   }
-  
+ 
+  isCarAvaible(carId: Number) {
+    return this.httpClient.get<ResponseModel>(BaseUrl + "Rentals/iscaravaible?cardId=" + carId);
 
+  }
 }
