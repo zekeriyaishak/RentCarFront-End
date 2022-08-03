@@ -1,3 +1,4 @@
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { LoginGuard } from './guards/login.guard';
 import { LoginComponent } from './components/login/login.component';
 import { CarUptadeComponent } from './components/updateComponents/car-uptade/car-uptade.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:"Brands/add",component:BrandAddComponent},
   {path:"Colors/add",component:ColorAddComponent},
   {path:"login",component:LoginComponent},
+  { path: "cars/carDetails/:carId", component: CarDetailComponent },
   {path:"Cars/uptade",component:CarUptadeComponent}
 ];
 

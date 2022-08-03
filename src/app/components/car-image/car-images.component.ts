@@ -1,6 +1,7 @@
 import { CarImage } from './../../models/carImage';
 import { CarImageService } from './../../services/car-image.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-car-images',
@@ -10,10 +11,16 @@ import { Component, OnInit } from '@angular/core';
 export class CarImagesComponent implements OnInit {
   carImages: CarImage[] = []
   dataLoaded = false;
-  constructor(private carImageService:CarImageService) { }
+  baseUrl = "https://localhost:/Uploads/Images/"
+
+  constructor(private carImageService:CarImageService, private activedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-      this.getCarImages()
+    this.activedRoute.params.subscribe(params => {
+      if (params["carId"]) {
+        this.getCarImagesByCarId(params["carId"])
+      }
+    })
   }
 
   getCarImages(){
@@ -21,6 +28,19 @@ export class CarImagesComponent implements OnInit {
        this.carImages = response.data;
        this.dataLoaded = true
     })
+  }
+  getCarImagesByCarId(carId: number) {
+    this.carImageService.getCarImagesByCarId(carId).subscribe(response => {
+      this.carImages = response.data;
+    })
+  }
+  getActiveImageClass(carImage: CarImage) {
+    if (carImage === this.carImages[0]) {
+      return "active"
+    } else {
+      return ""
+    }
+
   }
 
 }

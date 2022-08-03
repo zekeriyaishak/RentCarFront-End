@@ -16,5 +16,8 @@ export class CarImageService {
   getCarImages():Observable<ListResponseModel<CarImage>>{
     return this.httpClient.get<ListResponseModel<CarImage>>(BaseUrl + "carImages/getall")
   }
+  getCarImagesByCarId(carId: number): Observable<ListResponseModel<CarImage>> {
+    return this.httpClient.get<ListResponseModel<CarImage>>(BaseUrl+ "CarImages/getbycarid?carId=" + carId);
+  }
 
 }

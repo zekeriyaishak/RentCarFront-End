@@ -2,6 +2,9 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 
+  <!-- <app-car-image></app-car-image> -->
+
+
   <div class="mb-3">
     <label for="filterText" class="form-label">Marka ara</label>
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="marka giriniz">
@@ -28,8 +31,29 @@
             <td>{{car.modelYear}}</td>
             <td>{{car.dailyPrice}}</td>
             <td>{{car.description}}</td>
-            <td><button (click)="addToCart(car)"  type="button" class="btn btn-success">Kirala</button>
+            <td><button (click)="addToCart(car)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop" class="btn btn-light">Kirala</button>
             </td>
+            <button >
+            Aracı Kirala
+          </button>
         </tr>
     </tbody>
 </table>
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">          
+         <!-- <app-rental-add></app-rental-add> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Çıkış</button>
+
+      </div>
+    </div>
+  </div>
+</div>
