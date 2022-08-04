@@ -23,7 +23,7 @@ export class CarComponent implements OnInit {
   currentCar: Car;
   cars: CarDetail[] = [];
   carImages: CarImage[] = [];
-  baseUrl = "https://localhost:7197/Uploads/CarImages/"
+  baseUrl = "https://localhost:7197/Uploads/Images/"
   imageOfPath: string;
 
 
