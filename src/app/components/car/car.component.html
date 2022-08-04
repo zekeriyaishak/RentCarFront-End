@@ -1,18 +1,18 @@
 <div class="row">
   <div class="col-md-2">
-    <select [(ngModel)]="brandFilter" class="form-select" aria-label="marka seç">
+    <select [(ngModel)]="branddFilter" class="form-select" aria-label="marka seç">
       <option value="0">Marka seç</option>
       <option [value]="brand.brandId" *ngFor="let brand of brands">{{brand.brandName}}</option>
     </select>
   </div>
   <div class="col-md-2">
-    <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
+    <select [(ngModel)]="colorrFilter" class="form-select" aria-label="Default select example">
       <option value="0">Renk seç</option>
       <option [value]="color.id" *ngFor="let color of colors">{{color.colorName}}</option>
     </select>
   </div>
   <div class="col-md-2">
-    <button  routerLink="/cars/color/{{colorFilter}}/brand/{{brandFilter}}" style="width: 100%;"
+    <button  routerLink="/cars/color/{{colorrFilter}}/brand/{{branddFilter}}" style="width: 100%;"
       class=" btn btn-outline-dark" type="button"> filtrele</button>
   </div>
   <div class="col-md-2">
@@ -51,7 +51,6 @@
       <div class="row">
         <button type="button" class="btn btn-outline-dark" routerLink="/cars/carDetails/{{car.carId}}">
           Detaylar</button>
-
       </div>
     </div>
   </div>

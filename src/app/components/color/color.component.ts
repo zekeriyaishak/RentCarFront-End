@@ -9,9 +9,7 @@ import { Color } from 'src/app/models/color';
 })
 export class ColorComponent implements OnInit {
   colors: Color[] = []
-  dataLoaded = false
-  currentColor:Color;
-  emptyColor:Color;
+  currentColor?:Color;
 
 
   constructor(private colorService:ColorService) { }
@@ -23,7 +21,6 @@ export class ColorComponent implements OnInit {
   getColors(){
     this.colorService.getColors().subscribe(response=>{
       this.colors = response.data
-      this.dataLoaded = true
     });
   }
 
@@ -49,7 +46,7 @@ export class ColorComponent implements OnInit {
     }
   }
   clearCurrentColor(){
-    this.currentColor = this.emptyColor;
+    this.currentColor = undefined;
   }
 
 

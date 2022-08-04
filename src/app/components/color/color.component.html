@@ -1,17 +1,17 @@
-<div class="bg-secondary text-white btn w-100 mt-1 mb-1">Colors</div>
+<div class="bg-secondary text-white btn w-100 mt-1 mb-1">Renkler</div>
 
 <ul class="list-group">
     <li 
     (click) = "clearCurrentColor()"
     [class]="getallColorClass()"
-    routerLink="/cars"
+    routerLink="/colors"
   >
   Tüm Renkler
   </li>
 
     <li (click) = "setCurrentColor(color)"
-    routerLink = "cars/color/{{color.id}}"
     *ngFor = "let color of colors"
+    routerLink = "cars/color/{{color.id}}"
     [class] = "getCurrentColorClass(color)">{{color.colorName}}
     </li>
 </ul>

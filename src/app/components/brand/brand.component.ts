@@ -9,9 +9,7 @@ import { Brand } from 'src/app/models/brand';
 })
 export class BrandComponent implements OnInit {
   brands: Brand[] = []
-  dataLoaded = false;
-  currentBrand: Brand;
-  emptyBrand:Brand;
+  currentBrand?: Brand;
   filterText="";
 
 
@@ -24,7 +22,6 @@ export class BrandComponent implements OnInit {
   getBrands(){
     this.brandService.getBrands().subscribe(response=>{
       this.brands = response.data;
-      this.dataLoaded=true;
     })
   }
 
@@ -50,7 +47,7 @@ export class BrandComponent implements OnInit {
     }
   }
   clearCurrentBrand(){
-    this.currentBrand = this.emptyBrand;
+    this.currentBrand = undefined;
   }
  
 

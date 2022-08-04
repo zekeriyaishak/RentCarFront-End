@@ -53,14 +53,15 @@ export class CarComponent implements OnInit {
     
     this.activatedRoute.params.subscribe(params=>{
       if(params["colorId"] && params["brandId"]){
-        this.getCarsWithDetailsWithFilters(params["colorId"],params["brandId"])
+        this.getCarDetailByColorAndBrand(params["colorId"],params["brandId"])
         
-      }else if(params["colorId"]){
-        this.getCarsByColor(params["colorId"])
-      }
-      else if(params["brandId"]){
+      }else if(params["brandId"]){
         this.getCarsByBrand(params["brandId"])
       }
+      else if(params["colorId"]){
+        this.getCarsByColor(params["colorId"])
+      }
+      
       else{
         this.getCars();
       }
@@ -99,10 +100,12 @@ export class CarComponent implements OnInit {
   //   })
   // }
 
-  getCarsWithDetailsWithFilters(brandId?: number, colorId?: number) {
-    this.carService.getCarDetailByColorAndByBrand(brandId, colorId).subscribe(response => {
-      this.cars = response.data;
-    });
+  getCarDetailByColorAndBrand(colorId: number, brandId: number) {
+    this.carService.getCarDetailByColorAndByBrand(colorId, brandId)
+      .subscribe((response) => {
+        console.log(response)
+        this.cars = response.data;
+      });
   }
   // addToCart(car:Car){
   //   this.toastrService.success("Sepete eklendi",car.description)
