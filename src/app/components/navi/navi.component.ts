@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { UserModel } from 'src/app/models/userMode';
+import { UserModel } from 'src/app/models/userModel';
 import { AuthService } from 'src/app/services/auth.service';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
 
@@ -17,7 +17,7 @@ export class NaviComponent implements OnInit {
   constructor(private authService: AuthService, private localStorageService: LocalstorageService, private router: Router, private toastrservice: ToastrService) { }
 
   ngOnInit(): void {
-    this.ngDoCheck()
+    // this.ngDoCheck()
   }
 
 

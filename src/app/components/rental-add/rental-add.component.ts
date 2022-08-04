@@ -29,7 +29,7 @@ export class RentalAddComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.modelOfRental)
+    // console.log(this.modelOfRental)
     //this.totalPrice()
     //console.log(this.minDate);
     this.createRentalAddForm();
@@ -74,7 +74,7 @@ export class RentalAddComponent implements OnInit {
   }
   sendData() {
     this.modelOfRental = Object.assign({}, this.rentalAddForm.value);// buradan aldığım veriyi başka componentlarda da kullanmak için bu servisi yazdık
-    //console.log(this.modelOfRental)
+    console.log(this.modelOfRental)
     this.paymentService.updateData(this.modelOfRental)
   }
 

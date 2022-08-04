@@ -9,5 +9,5 @@ export interface CarDetail {
     dailyPrice:number,
     modelYear:Number,
     imagePath:string;
-
+    carImages: CarImage[]; 
 }

@@ -4,11 +4,11 @@ import { BaseUrl } from './../models/constants/urls';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginModel } from '../models/loginModel';
-import { UserModel } from '../models/userMode';
 import { LocalstorageService } from './localstorage.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { RegisterModel } from '../models/registerModel';
 import { first, Observable } from 'rxjs';
+import { UserModel } from '../models/userModel';
 
 
 
@@ -70,20 +70,19 @@ export class AuthService {
         let tokenInfoId = Object.keys(decodedToken).filter(x => x.endsWith('/nameidentifier'))[0]
         let userId = Number(decodedToken[tokenInfoId]);
 
-        let claimInfo = Object.keys(decodedToken).filter(x => x.endsWith('/role'))[0]
-        let roles = decodedToken[claimInfo];
-        console.log("role:", roles)
+        // let claimInfo = Object.keys(decodedToken).filter(x => x.endsWith('/role'))[0]
+        // let roles = decodedToken[claimInfo];
+        // console.log("role:", roles)
 
         let emailInfo = decodedToken.email;
 
         this.user = {
           userId: userId,
-          //userName : userName,
+          // userName: userName,
           firstName: firstName,
           lastName: lastName,
           email: emailInfo,
-          roles: roles,
-
+          // roles: roles,
         }
       }
     }

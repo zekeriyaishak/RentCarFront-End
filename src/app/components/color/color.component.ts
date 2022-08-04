@@ -10,6 +10,7 @@ import { Color } from 'src/app/models/color';
 export class ColorComponent implements OnInit {
   colors: Color[] = []
   currentColor?:Color;
+  emptyColor:Color;
 
 
   constructor(private colorService:ColorService) { }
@@ -46,7 +47,7 @@ export class ColorComponent implements OnInit {
     }
   }
   clearCurrentColor(){
-    this.currentColor = undefined;
+    this.currentColor =this.emptyColor;
   }
 
 

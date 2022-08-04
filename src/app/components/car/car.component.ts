@@ -24,7 +24,7 @@ export class CarComponent implements OnInit {
   cars: CarDetail[] = [];
   carImages: CarImage[] = [];
   baseUrl = "https://localhost:7197/Uploads/Images/"
-  imageOfPath: string;
+    imageOfPath: string;
 
 
   brands: Brand[] = [];
