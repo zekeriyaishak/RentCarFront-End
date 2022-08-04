@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 import { Rental } from '../models/rental';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseMode';
+import { SingleResponseModel } from '../models/singleResponseModel';
+import { RentalDetail } from '../models/rentalDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +23,10 @@ export class RentalService {
     return this.httpClient.get<ResponseModel>(BaseUrl + "Rentals/iscaravaible?cardId=" + carId);
 
   }
+
+  getRentalByCarId(carId:number) : Observable<SingleResponseModel<Rental>>{
+    let newPath = BaseUrl+"Rentals/getrentalbyid?rentalId="+carId;
+    return this.httpClient.get<SingleResponseModel<Rental>>(newPath);
+  }
+  
 }

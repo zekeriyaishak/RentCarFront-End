@@ -1,8 +1,16 @@
+import { RentalDetailService } from './../../services/rental-detail.service';
 import { Component, OnInit } from '@angular/core';
 import { CarDetail } from 'src/app/models/carDetail';
 import { ToastrService } from 'ngx-toastr';
 import { CarService } from 'src/app/services/car.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CarImage } from 'src/app/models/carImage';
+import { Rental } from 'src/app/models/rental';
+import { CarDetailService } from 'src/app/services/car-detail.service';
+import { RentalService } from 'src/app/services/rental.service';
+import { CustomerService } from 'src/app/services/customer.service';
+import { PaymentService } from 'src/app/services/payment.service';
+import { getNumberOfCurrencyDigits } from '@angular/common';
 
 
 @Component({
@@ -12,8 +20,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CarDetailComponent implements OnInit {
   cars: CarDetail[] = [];
-  carDetails:CarDetail[] = []
-  constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
+  filterText ="";
+  constructor(private carService: CarService,
+     private activatedRoute: ActivatedRoute,
+    ) { }
 
   ngOnInit(): void {
 
@@ -24,13 +34,13 @@ export class CarDetailComponent implements OnInit {
     })
   }
 
+
   getCarDetailByCarId(carId: number) {
     this.carService.getCarDetailByCarId(carId).subscribe(response => {
       this.cars = response.data
     })
   }
-
-
-  
-  
 }
+
+  
+

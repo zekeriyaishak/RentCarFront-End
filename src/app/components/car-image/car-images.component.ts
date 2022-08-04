@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CarImagesComponent implements OnInit {
   carImages: CarImage[] = []
   dataLoaded = false;
-  baseUrl = "http://localhost:4200/Uploads/Images/"
+  baseUrl = "https://localhost:7197/Uploads/Images/"
 
   constructor(private carImageService:CarImageService, private activedRoute: ActivatedRoute) { }
 
@@ -25,9 +25,7 @@ export class CarImagesComponent implements OnInit {
 
   getCarImages(){
     this.carImageService.getCarImages().subscribe(response=>{
-       this.carImages = response.data;
-       this.dataLoaded = true
-    })
+       this.carImages = response.data;    })
   }
   getCarImagesByCarId(carId: number) {
     this.carImageService.getCarImagesByCarId(carId).subscribe(response => {

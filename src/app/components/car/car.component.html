@@ -30,28 +30,29 @@
 
   <div *ngFor="let car of cars | filterPipe:filterText" class="card mt-2 mr-2" style="width: 18rem;margin-right: 10px;">
 
-    <img *ngIf="car.imagePath" src="baseUrl+2020HondaCivic.jpg" class="card-img-top"
+    <img *ngIf="car.imagePath" src="baseUrl+car.imagePath"  type="button" routerLink="/cars/carDetails/{{car.carId}}"  class="card-img-top"
       style="object-fit: cover; margin-top: 10px;" width="100" height="50%" alt="HATA">
 
-    <img *ngIf="!car.imagePath" src="assets/images/rent.jpeg" class="card-img-top"
+    <img *ngIf="!car.imagePath" src="assets/images/rent.jpeg" type="button" routerLink="/cars/carDetails/{{car.carId}}" class="card-img-top"
       style="object-fit: cover; margin-top: 10px;" width="100" height="50%" alt="HATA">
     <div class="card-body">
-      <h5 class="card-title">{{ car.BrandId }}</h5>
+      
 
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"> Model yılı: {{ car.modelYear }}</li>
-      <li class="list-group-item">Renk adı: {{ car.colorName }} </li>
-      <li class="list-group-item">Marka adı: {{ car.brandName }}</li>
-      <li class="list-group-item">Günlük fiyat: {{ car.dailyPrice }}</li>
-      <li class="list-group-item">Araç açıklaması: {{ car.carName}}</li>
-
-    </ul>
+    
     <div class="card-body">
-      <div class="row">
-        <button type="button" class="btn btn-outline-dark" routerLink="/cars/carDetails/{{car.carId}}">
-          Detaylar</button>
-      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Model yılı: {{ car.modelYear }}</li>
+        <li class="list-group-item">Renk adı: {{ car.colorName }} </li>
+        <li class="list-group-item">Marka adı: {{ car.brandName }}</li>
+        <li class="list-group-item">Günlük fiyat: {{ car.dailyPrice }}</li>
+        <li class="list-group-item">Araç açıklaması: {{ car.carName}}</li>
+  
+      </ul>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" routerLink="/cars/carDetails/{{car.carId}}" class="btn btn-sm btn-outline-secondary">Detay</button>
+        </div>
     </div>
   </div>
 </div>

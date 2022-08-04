@@ -23,8 +23,9 @@ export class CarComponent implements OnInit {
   currentCar: Car;
   cars: CarDetail[] = [];
   carImages: CarImage[] = [];
-  baseUrl = "assets/images/"
+  baseUrl = "https://localhost:7197/Uploads/CarImages/"
   imageOfPath: string;
+
 
   brands: Brand[] = [];
   colors: Color[] = [];
@@ -137,7 +138,7 @@ export class CarComponent implements OnInit {
   image(carId: number) {
     this.carImageService.getCarImagesByCarId(carId).subscribe(response => {
       var imagePath = response.data[0].imagePath
-      this.imageOfPath = BaseUrl+ imagePath;
+      this.imageOfPath = this.baseUrl+ imagePath;
       console.log(this.imageOfPath)
     })
     return this.imageOfPath
