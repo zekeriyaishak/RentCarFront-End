@@ -30,15 +30,14 @@
 
   <div *ngFor="let car of cars |filterPipe:filterText" class="card mt-2 mr-2" style="width: 18rem;margin-right: 10px;">
 
-      <img *ngIf="car.imagePath" [src]="baseUrl+car.imagePath" type="button" routerLink="/cars/carDetails/{{car.carId}}" class="card-img-top"
+      <img *ngIf="car.carImages[0]" [src]="baseUrl+car.carImages[0].imagePath " type="button" routerLink="/cars/carDetails/{{car.carId}}" class="card-img-top"
       style="object-fit: cover; margin-top: 10px;" width="100" height="50%" alt="HATA RESIM GELMEDİ">
 
-      <img *ngIf="car.imagePath==null" [src]="baseUrl+'df5eb09d-33ba-42ab-b10b-7de641f84470.jpeg'" type="button" routerLink="/cars/carDetails/{{car.carId}}" class="card-img-top"
+      <img *ngIf="!car.carImages[0]" [src]="baseUrl+'df5eb09d-33ba-42ab-b10b-7de641f84470.jpeg'" type="button" routerLink="/cars/carDetails/{{car.carId}}" class="card-img-top"
       style="object-fit: cover; margin-top: 10px;" width="100" height="50%" alt="HATA RESIM GELMEDİ">
+      
     <div class="card-body">
       <h5 class="card-title">{{ car.carName }}</h5>
-
-
     </div>
 
     <div class="card-body">

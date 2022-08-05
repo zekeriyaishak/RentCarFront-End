@@ -11,6 +11,7 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
   styleUrls: ['./navi.component.css']
 })
 export class NaviComponent implements OnInit {
+  baseUrl="https://localhost:7197/Uploads/Images/"
 
   userInfo: UserModel = this.authService.getUserInfo()
 
