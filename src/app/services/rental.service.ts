@@ -20,7 +20,7 @@ export class RentalService {
   }
  
   isCarAvaible(carId: Number) {
-    return this.httpClient.get<ResponseModel>(BaseUrl + "Rentals/iscaravaible?cardId=" + carId);
+    return this.httpClient.get<ResponseModel>(BaseUrl + "Rentals/iscaravaible?cardId="+carId);
 
   }
 

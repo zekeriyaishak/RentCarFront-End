@@ -30,15 +30,17 @@
 
   <div *ngFor="let car of cars |filterPipe:filterText" class="card mt-2 mr-2" style="width: 18rem;margin-right: 10px;">
 
-    <img *ngIf="car.imagePath!=null" src="baseUrl+car.imagePath" type="button" routerLink="/cars/carDetails/{{car.carId}}" class="card-img-top"
+      <img *ngIf="car.imagePath" [src]="baseUrl+car.imagePath" type="button" routerLink="/cars/carDetails/{{car.carId}}" class="card-img-top"
       style="object-fit: cover; margin-top: 10px;" width="100" height="50%" alt="HATA RESIM GELMEDİ">
 
-    <img *ngIf="!car.imagePath" src="assets/images/rent.jpeg" type="button" routerLink="/cars/carDetails/{{car.carId}}" class="card-img-top"
+      <img *ngIf="car.imagePath==null" [src]="baseUrl+'df5eb09d-33ba-42ab-b10b-7de641f84470.jpeg'" type="button" routerLink="/cars/carDetails/{{car.carId}}" class="card-img-top"
       style="object-fit: cover; margin-top: 10px;" width="100" height="50%" alt="HATA RESIM GELMEDİ">
     <div class="card-body">
+      <h5 class="card-title">{{ car.carName }}</h5>
+
 
     </div>
-    
+
     <div class="card-body">
       <ul class="list-group list-group-flush">
         <li class="list-group-item"> Model yılı: {{ car.modelYear }}</li>
@@ -46,7 +48,7 @@
         <li class="list-group-item">Marka adı: {{ car.brandName }}</li>
         <li class="list-group-item">Günlük fiyat: {{ car.dailyPrice }}</li>
         <li class="list-group-item">Araç açıklaması: {{ car.carName}}</li>
-  
+
       </ul>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">

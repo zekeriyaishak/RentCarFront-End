@@ -63,7 +63,7 @@ export class RentalAddComponent implements OnInit {
         .subscribe((response) => {
           this.toastrService.success(response.message, "Başarılı");
           this.sendData();
-          this.router.navigate(["/payments", this.carDetail[0].carId])
+          this.router.navigate(["/cars/payment", this.carDetail[0].carId])
 
         },
           (responseError) => {
@@ -74,7 +74,7 @@ export class RentalAddComponent implements OnInit {
   }
   sendData() {
     this.modelOfRental = Object.assign({}, this.rentalAddForm.value);// buradan aldığım veriyi başka componentlarda da kullanmak için bu servisi yazdık
-    console.log(this.modelOfRental)
+    // console.log(this.modelOfRental)
     this.paymentService.updateData(this.modelOfRental)
   }
 
