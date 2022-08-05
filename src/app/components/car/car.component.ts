@@ -20,7 +20,7 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class CarComponent implements OnInit {
 
-  currentCar: Car;
+  // currentCar: Car;
   cars: CarDetail[] = [];
   carImages: CarImage[] = [];
   baseUrl = "https://localhost:7197/Uploads/Images/"
@@ -29,9 +29,6 @@ export class CarComponent implements OnInit {
 
   brands: Brand[] = [];
   colors: Color[] = [];
-
-  //*ngIf="car.imagePath" [src]="baseUrl+car.imagePath" class="card-img-top"
-//style="object-fit: cover; margin-top: 10px;" width="100" height="50%" alt="..."
   filterText = "";
   cardetailFilter = '';
   brandFilter: number = 0;
@@ -46,7 +43,6 @@ export class CarComponent implements OnInit {
     private colorService: ColorService,
     private carImageService: CarImageService,
     private toastrService: ToastrService) { }     //service'leri kullanabilmek için yapılır
-//rent.jpeg
 
   ngOnInit(): void {
     this.getBrands();
@@ -114,26 +110,26 @@ export class CarComponent implements OnInit {
   // }
 
 
-  getCurrentCarClass(car:Car){
-    if(car == this.currentCar){
-      return "list-group-item active"
-    }
-    else{
-      return "list-group-item"
-    }
-  }
+  // getCurrentCarClass(car:Car){
+  //   if(car == this.currentCar){
+  //     return "list-group-item active"
+  //   }
+  //   else{
+  //     return "list-group-item"
+  //   }
+  // }
 
-  getAllCarClass(){
-    if(!this.currentCar){
-      return "list-group-item active"
-    }
-    else{
-      return "list-group-item"
-    }
-  }
-  setCurrentCar(car:Car){
-    this.currentCar = car;
-  }
+  // getAllCarClass(){
+  //   if(!this.currentCar){
+  //     return "list-group-item active"
+  //   }
+  //   else{
+  //     return "list-group-item"
+  //   }
+  // }
+  // setCurrentCar(car:Car){
+  //   this.currentCar = car;
+  // }
 
   image(carId: number) {
     this.carImageService.getCarImagesByCarId(carId).subscribe(response => {

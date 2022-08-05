@@ -48,7 +48,7 @@ export class BrandComponent implements OnInit {
     }
   }
   clearCurrentBrand(){
-    this.currentBrand = this.emptyBrand;
+    this.currentBrand = undefined ;
   }
  
 
