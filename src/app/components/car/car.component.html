@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-2">
     <select [(ngModel)]="branddFilter" class="form-select" aria-label="marka seç">
-      <option value="0">Marka seç</option>
+      <option value="0" >Marka seç</option>
       <option [value]="brand.brandId" *ngFor="let brand of brands">{{brand.brandName}}</option>
     </select>
   </div>
@@ -13,7 +13,7 @@
   </div>
   <div class="col-md-2">
     <button  routerLink="/cars/color/{{colorrFilter}}/brand/{{branddFilter}}" style="width: 100%;"
-      class=" btn btn-outline-dark" type="button"> filtrele</button>
+      class=" btn btn-outline-dark" type="button" style ="color: #f10755;"> filtrele</button>
   </div>
   <div class="col-md-2">
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
@@ -23,7 +23,6 @@
     {{filterText}} aradınız
   </div>
 </div>
-
 
 
 <div class="row mt-1" style="margin-left: 1%;">
@@ -42,11 +41,11 @@
 
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"> Model yılı: {{ car.modelYear }}</li>
-        <li class="list-group-item">Renk adı: {{ car.colorName }} </li>
-        <li class="list-group-item">Marka adı: {{ car.brandName }}</li>
-        <li class="list-group-item">Günlük fiyat: {{ car.dailyPrice }}</li>
-        <li class="list-group-item">Araç açıklaması: {{ car.carName}}</li>
+        <li class="list-group-item list-group-item-primary"> Model yılı: {{ car.modelYear }}</li>
+        <li class="list-group-item list-group-item-secondary">Renk adı: {{ car.colorName }} </li>
+        <li class="list-group-item list-group-item-warning">Marka adı: {{ car.brandName }}</li>
+        <li class="list-group-item list-group-item-danger">Günlük fiyat: {{ car.dailyPrice }}</li>
+        <li class="list-group-item list-group-item-success">Araç açıklaması: {{ car.carName}}</li>
 
       </ul>
       <div class="d-flex justify-content-between align-items-center">
