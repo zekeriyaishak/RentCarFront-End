@@ -47,7 +47,7 @@ export class CarComponent implements OnInit {
   ngOnInit(): void {
     this.getBrands();
     this.getColors();
-    
+
     this.activatedRoute.params.subscribe(params=>{
       if(params["colorId"] && params["brandId"]){
         this.getCarDetailByColorAndBrand(params["colorId"],params["brandId"])
